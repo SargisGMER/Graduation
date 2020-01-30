@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <connectionStrings>
+      <add name="GraduationDB" connectionString="Persist Security Info=False;User ID=sa;Initial Catalog=GraduationDB;Data Source=10.25.16.112;Password=A!@123456h;"/>
+    </connectionStrings>
+  </appSettings>
+</configuration>
