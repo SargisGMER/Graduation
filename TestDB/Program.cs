@@ -3,6 +3,7 @@ using Graduation.DAL.Models;
 using Graduation.DAL.Implementations;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Graduation.DAL.UnitOfWork;
 
 namespace TestDB
 {
@@ -10,19 +11,27 @@ namespace TestDB
     {
         static void Main(string[] args)
         {
+
+            UnitOfWork unitOfWork = new UnitOfWork();
+
+            var account = unitOfWork.AccountRepository.GetAll();//.ToList();
+            foreach (var item in account)
+            {
+                Console.WriteLine(item.Email);
+            }
             //System.Configuration.ConfigurationFileMap fileMap = new System.Configuration.ConfigurationFileMap(@"D:\Graduation Projects\Graduation\TestDB\config.xml"); //Path to your config file
             //System.Configuration.Configuration configuration = System.Configuration.ConfigurationManager.OpenMappedMachineConfiguration(fileMap);
-            DbContextOptionsBuilder<GraduationDBContext> dbContextOptionsBuilder = new DbContextOptionsBuilder<GraduationDBContext>();
+            //DbContextOptionsBuilder<GraduationDBContext> dbContextOptionsBuilder = new DbContextOptionsBuilder<GraduationDBContext>();
 
-            dbContextOptionsBuilder.UseSqlServer("Persist Security Info=False;User ID=sa;Initial Catalog=GraduationDB;Data Source=10.25.15.112;Password=A!@123456h;");
-            GraduationDBContext graduationDBContext = new GraduationDBContext(dbContextOptionsBuilder.Options);
-
-
-            CharactersDataAccess userDataAccess = new CharactersDataAccess(graduationDBContext);
+            //dbContextOptionsBuilder.UseSqlServer("Persist Security Info=False;User ID=sa;Initial Catalog=GraduationDB;Data Source=10.25.15.112;Password=A!@123456h;");
+            //GraduationDBContext graduationDBContext = new GraduationDBContext(dbContextOptionsBuilder.Options);
 
 
-            var character = userDataAccess.GetById(8);
-            Console.WriteLine($"{character.Id} : {character.Account}");
+            //CharactersDataAccess userDataAccess = new CharactersDataAccess(graduationDBContext);
+
+
+            //var character = userDataAccess.GetById(8);
+            //Console.WriteLine($"{character.Id} : {character.Account}");
 
 
 
