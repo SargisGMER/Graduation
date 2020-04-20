@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Graduation.BLL.FactoryContracts
 {
-    public interface IWeaponFactory
+    interface IAccountFactory
     {
     }
 }
