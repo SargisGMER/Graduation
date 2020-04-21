@@ -4,6 +4,7 @@ using Graduation.DAL.Implementations;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Graduation.DAL.UnitOfWork;
+using Graduation.BLL.BL;
 
 namespace TestDB
 {
@@ -12,13 +13,22 @@ namespace TestDB
         static void Main(string[] args)
         {
 
-            UnitOfWork unitOfWork = new UnitOfWork();
+            AccountBL account = new AccountBL();
 
-            var account = unitOfWork.AccountRepository.GetAll();//.ToList();
-            foreach (var item in account)
+            var v = account.Authentication("aa@aa", "34234");
+
+            if (v != null) 
             {
-                Console.WriteLine(item.Email);
+                Console.WriteLine(v.Id);
+                Console.WriteLine(v.Email);
+                Console.WriteLine(v.Name);
             }
+            else
+            {
+                Console.WriteLine("Null");
+            }
+
+            Console.ReadLine();
             //System.Configuration.ConfigurationFileMap fileMap = new System.Configuration.ConfigurationFileMap(@"D:\Graduation Projects\Graduation\TestDB\config.xml"); //Path to your config file
             //System.Configuration.Configuration configuration = System.Configuration.ConfigurationManager.OpenMappedMachineConfiguration(fileMap);
             //DbContextOptionsBuilder<GraduationDBContext> dbContextOptionsBuilder = new DbContextOptionsBuilder<GraduationDBContext>();

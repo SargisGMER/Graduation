@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Graduation.DAL\Graduation.DAL.csproj" />
+    <ProjectReference Include="..\Graduation.BLL\Graduation.BLL.csproj" />
   </ItemGroup>
 
 </Project>
