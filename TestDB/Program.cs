@@ -44,8 +44,6 @@ namespace TestDB
             //Console.WriteLine($"{character.Id} : {character.Account}");
 
 
-
-
             //var getall = userCharactersDataAccess.GetAll().Where(x => x.Email == "aa@aa");
 
             //foreach (var item in getall)

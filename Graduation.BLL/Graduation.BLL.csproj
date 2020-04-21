@@ -9,10 +9,4 @@
     <ProjectReference Include="..\Graduation.Entities\Graduation.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.Web.CodeGeneration">
-      <HintPath>C:\Users\sargis.manukyan\.nuget\packages\microsoft.visualstudio.web.codegeneration\2.1.9\lib\netstandard2.0\Microsoft.VisualStudio.Web.CodeGeneration.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
